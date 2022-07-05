@@ -10,11 +10,12 @@ This is a practice demo for learning new technology stack.
 2. Git
    1. GitHub使用流程
       1. `git clone [url]` [官方使用教程](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
-      2. `git checkout -b BRANCHNAME` *BRANCHNAME*为自己设定的分支名，命名规则请参考下文**Gitflow**。如果想更深入的了解branch相关知识请参考[这个](https://www.liaoxuefeng.com/wiki/896043488029600/900003767775424)
-      3. ...修改文件ing...
-      4. `git add .` 添加所有更改过的文件
-      5. `git commit -m ''` 添加commit信息，请尽可能详细明确
-      6. `git push origin BRANCHNAME` 提交代码，其中*BRANCHNAME*和刚刚设置的相同
+      2. `git checkout dev` 进入develop分支
+      3. `git checkout -b BRANCHNAME` *BRANCHNAME*为自己设定的分支名，命名规则请参考下文**Gitflow**。如果想更深入的了解branch相关知识请参考[这个](https://www.liaoxuefeng.com/wiki/896043488029600/900003767775424)
+      4. ...修改文件ing...
+      5. `git add .` 添加所有更改过的文件
+      6. `git commit -m ''` 添加commit信息，请尽可能详细明确
+      7. `git push origin BRANCHNAME` 提交代码，其中*BRANCHNAME*和刚刚设置的相同
    2. Gitflow 的具体使用方法与原理可以参考[这个](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)链接，在观看的过程中请跳过使用`git-flow extensions`的相关内容。我们本次提交时使用的*BRANCHNAME*为`demo-<Your GitHub user name>`
 3. Express
    - 请完成[官方网站](http://expressjs.com/en/starter/installing.html)中红框圈出部分的阅读
