@@ -1,23 +1,42 @@
 const express = require("express");
 const router = express.Router();
 
-/* Example */
-router.get("/", (req, res) => {
-  res.send("This is a GET API");
-});
+// /* Example */
+// router.get("/", (req, res) => {
+//   res.send("This is a GET API");
+// });
 
-/* TODO */
-router.post("/", (req, res) => {
-  res.send("This is a POST API");
-});
+// /* TODO */
 
-router.put("/", (req, res) => {
-  res.send("This is a PUT API");
-});
-
-router.delete("/", (req, res) => {
-  res.send("This is a DELETE API");
-});
+router.use(
+  "/",
+  (req, res, next) => {
+    if (req.method === "GET") {
+      res.send("This is a GET API");
+    } else {
+      next();
+    }
+  },
+  (req, res, next) => {
+    if (req.method === "POST") {
+      res.send("This is a POST API");
+    } else {
+      next();
+    }
+  },
+  (req, res, next) => {
+    if (req.method === "PUT") {
+      res.send("This is a PUT API");
+    } else {
+      next();
+    }
+  },
+  (req, res) => {
+    if (req.method === "DELETE") {
+      res.send("This is a DELETE API");
+    }
+  }
+);
 
 router.post("/user/:id", (req, res) => {
   if (req.params.id === "12345") {
