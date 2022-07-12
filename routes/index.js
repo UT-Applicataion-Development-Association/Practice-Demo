@@ -1,27 +1,23 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-/* GET home page. */
-router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
-router.use('/', (res, req, next) => {
-  res.send('This is a ' + req.method + ' API')
-  next()
-})
-
-router.post('/user/:id', (res, req) => {
+router.post('/user/:id', (req, res, next) => {
   if (req.params.id === '12345') {
     res.send('User id is correct');
+    next()
   }
   else {
     res.send('User id is wrong');
+    next()
   }
 })
 
-router.get('/addFive/:num', (res, req) => {
-  res.send((req.params.num + 5).toString)
+router.get('/addFive/:num', (req, res) => {
+  res.send((req.params.num + 5).toString);
+})
+
+router.use('/', (req, res, next) => {
+  res.send('This is a ' + req.method + ' API');
 })
 
 module.exports = router;
