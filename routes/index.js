@@ -10,7 +10,7 @@ router.post('/user/:id', (req, res) => {
 });
 
 router.get('/addFive/:num', (req, res) => {
-  res.send((req.params.num + 5).toString);
+  res.send((parseInt(req.params.num) + 5).toString());
 });
 
 router.use('/', (req, res) => {
